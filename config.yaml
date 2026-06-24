@@ -11,7 +11,7 @@ display_language: "en"
 
 # API settings
 api:
-  key: 'your gemini key'
+  key: 'your_gemini_key_here'
   base_url: 'https://generativelanguage.googleapis.com/v1beta/openai/'
   model: 'models/gemini-2.5-pro'
   llm_support_json: false
