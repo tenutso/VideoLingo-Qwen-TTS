@@ -7,19 +7,19 @@
 
 ## ======================== Basic Settings ======================== ##
 
-display_language: "zh-CN"
+display_language: "en"
 
 # API settings
 api:
-  key: 'your-api-key'
-  base_url: 'https://yunwu.ai'
-  model: ''
+  key: 'AQ.Ab8RN6IZzlPOdXcZZWn9H4PawLzKzRs6aZgdzecSt9KvxGi4Gg'
+  base_url: 'https://generativelanguage.googleapis.com/v1beta/openai/'
+  model: 'models/gemini-2.5-pro'
   llm_support_json: false
 # *Number of LLM multi-threaded accesses, set to 1 if using local LLM
 max_workers: 4
 
 # Language settings, written into the prompt, can be described in natural language
-target_language: '简体中文'
+target_language: 'ca French'
 
 # Whether to use Demucs for vocal separation before transcription
 demucs: true
@@ -71,7 +71,7 @@ pause_before_translate: false
 
 ## ======================== Dubbing Settings ======================== ##
 # TTS selection [sf_fish_tts, openai_tts, gpt_sovits, azure_tts, fish_tts, edge_tts, custom_tts]
-tts_method: 'azure_tts'
+tts_method: 'custom_tts'
 
 # SiliconFlow FishTTS
 sf_fish_tts:
@@ -118,6 +118,23 @@ gpt_sovits:
 
 f5tts:
   302_api: 'YOUR_302_API_KEY'
+
+# Qwen3-TTS (local model, https://github.com/QwenLM/Qwen3-TTS)
+# Used when tts_method is 'custom_tts'
+qwen_tts:
+  mode: 'clone'          # custom | design | clone
+  # Model id (HF id or local path) used for each mode
+  model_custom: 'Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice'
+  model_design: 'Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign'
+  model_clone:  'Qwen/Qwen3-TTS-12Hz-1.7B-Base'
+  speaker: 'Ryan'        # custom mode: Vivian/Serena/Uncle_Fu/Dylan/Eric/Ryan/Aiden/Ono_Anna/Sohee
+  instruct: ''           # custom/design mode: natural-language style control, e.g. "calm tone"
+  language: 'French'     # 'Auto' = auto-detect; or Chinese/English/French/...
+  # clone mode: 'combined' = one ~10s reference for the whole video (consistent, recommended)
+  #             'per_line'  = each line cloned from its own reference clip
+  ref_mode: 'combined'
+  device: 'cuda:0'       # 'cpu' to force CPU
+  dtype: 'bfloat16'      # bfloat16/float16/float32
 
 # *Audio speed range
 speed_factor:

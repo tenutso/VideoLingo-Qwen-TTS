@@ -59,7 +59,7 @@ def tts_main(text, save_as, number, task_df):
             elif TTS_METHOD == 'edge_tts':
                 edge_tts(text, save_as)
             elif TTS_METHOD == 'custom_tts':
-                custom_tts(text, save_as)
+                custom_tts(text, save_as, number, task_df)
             elif TTS_METHOD == 'sf_cosyvoice2':
                 cosyvoice_tts_for_videolingo(text, save_as, number, task_df)
             elif TTS_METHOD == 'f5tts':

@@ -1,4 +1,5 @@
 import os
+import numpy as np  # noqa: F401  # used by eval() of new_sub_times strings (may contain np.float64(...))
 import pandas as pd
 import subprocess
 from pydub import AudioSegment
