@@ -10,6 +10,21 @@
 
 </div>
 
+> ### 🍴 About this fork
+>
+> This is a **community fork** of [Huanshere/VideoLingo](https://github.com/Huanshere/VideoLingo) focused on **local, open-source dubbing models** — run high-quality TTS entirely on your own GPU, no third-party speech API required.
+>
+> **What's new here:**
+> - 🗣️ **[Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) integration** via the `custom_tts` backend, with three modes:
+>   - **Voice clone** — match the original speaker from reference audio (the default)
+>   - **Custom voice** — pick from built-in premium speakers, with natural-language style control
+>   - **Voice design** — invent a voice from a text description
+> - 🌍 Per-language synthesis control (e.g. native-accent prosody when the target language is set explicitly)
+>
+> **Roadmap:** more open-source / self-hostable speech models behind the same pluggable backend.
+>
+> Everything from upstream VideoLingo still works unchanged — see the original features below. All credit for the core project goes to the upstream authors. 🙏
+
 ## 🌟 Overview ([Try VL Now!](https://videolingo.io))
 
 VideoLingo is an all-in-one video translation, localization, and dubbing tool aimed at generating Netflix-quality subtitles. It eliminates stiff machine translations and multi-line subtitles while adding high-quality dubbing, enabling global knowledge sharing across language barriers.
@@ -27,7 +42,7 @@ Key features:
 
 - **✅ Netflix-standard, Single-line subtitles Only**
 
-- **🗣️ Dubbing with GPT-SoVITS, Azure, OpenAI, and more**
+- **🗣️ Dubbing with Qwen3-TTS (local voice clone), GPT-SoVITS, Azure, OpenAI, and more**
 
 - 🚀 One-click startup and processing in Streamlit
 
